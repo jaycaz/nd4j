@@ -233,7 +233,7 @@ public class KernelFunctionLoader {
         String tmpDir = System.getProperty("java.io.tmpdir");
         StringBuffer dir = new StringBuffer();
         this.kernelPath = dir.append(tmpDir)
-                .append(File.separator)
+                .append(tmpDir.endsWith(File.separator) ? "" : File.separator)
                 .append("nd4j-kernels")
                 .append(File.separator)
                 .append("output")
